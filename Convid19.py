@@ -20,4 +20,13 @@ print(df[df['Country/Region']=="Greece"]['Deaths'].sum())
 print(df[df['Country/Region']=="Greece"]['Recovered'].sum())
 """
 
-print(df[df.Confirmed == df.Confirmed.max()]['Country/Region'])
+
+print(df.loc[(df['Country/Region']=="Greece") &(df['Date']=='3/22/20')])
+
+import datetime
+day = datetime.date(2020,3,20).strftime('%x')
+print(day.year)
+month = datetime.date(2020,3,20).month
+day = datetime.date(2020,3,20).day
+
+print(df.loc[(df['Country/Region']=="Greece") &(df['Date']==str(str(month)+'/'+str(day)+'/'+str(year)))])
